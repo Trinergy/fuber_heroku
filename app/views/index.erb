@@ -1,0 +1,62 @@
+<div class="container" id="welcome">
+
+  <div class="row-centered">
+
+    <div class="headline" id="greeting">
+      <h1>Welcome to F&uuml;ber</h1>
+      <h4><%= @tagline %></h4>
+    </div>
+
+  </div>
+
+  <div class="row-centered">
+    <div class="btn-group">
+        <a href="/orders/menu"><button type="button" class="btn btn-primary">ORDER</button></a>
+
+        <a href="/orders"><button type="button" class="btn btn-primary">DELIVER</button></a>
+    </div>
+  </div>
+    
+</div>
+
+<div class ="arrow">
+  <a href="#about" rel="m_PageScroll2id"><img class="arrowimg" src="../../img/scrolldown.png"></a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container" id="about">
+  <div class="headline" id="aboutgreeting">
+    <h1>About F&uuml;ber</h1>
+    <h4>Say hi to the guys</h4>
+  </div>
+</div>
+<div id="service">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-md-4">
+          <h3>Hey, I just met you</h3>
+          <p>Füber is essentially the uber of food delivery. The idea behind the app is that not everyone has time in their day (or is too lazy) to order food.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>And this is tasty</h3>
+          <p>F&uuml;ber saves you time by removing some of the time-consuming choices you need to make when ordering your food and leaves them up to your delivery driver.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Here's my F&uuml;ber, rate me baby!</h3>
+          <p>Some of the features that put Füber at the top of the pack include rock solid back end logic, state of the art animations and a user-interface that is as easy to use as it is styled to perfection.</p>
+        </div>            
+      </div>
+    </div>
+   </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/javascript/jquery.malihu.PageScroll2id.js"></script>
+<script type="text/javascript">
+  $(function() {
+      $("a[rel='m_PageScroll2id']").mPageScroll2id();
+  });
+</script>
+
+

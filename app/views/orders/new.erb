@@ -1,0 +1,81 @@
+<div class="row">
+
+  <div class="col-xs-4 col-xs-offset-4">
+
+    <h2 id="form_title">ORDER</h2>
+
+    <form class="form-horizontal" method="post" action="/orders">
+
+        <div class="right-inner-addon">
+          <i class="glyphicon glyphicon-cutlery"></i>
+            <select name="cuisine" class="form-control">
+                <option selected="selected"><%= @selected_cuisine %></option>
+                <% @cuisine_options.each do |option|%>
+                <option value="<%= option %>"><%= option %></option>
+                <% end %>
+              </select>
+        </div>
+
+        <div class="right-inner-addon">
+          <i class="glyphicon glyphicon-piggy-bank"></i>
+            <select name="price" class="form-control">
+              <option value="10">$10</option>
+              <option value="15">$15</option>
+              <option value="20">$20</option>
+            </select>
+        </div>
+
+        <div class="right-inner-addon">
+          <i class="glyphicon glyphicon-plus-sign"></i>
+          <select name="drink" class="form-control">
+            <option value="soft_drink">Add soft drink +$2</option>
+            <option value="beer">Add beer +$5</option>
+            <option value="beer">No drink</option>
+          </select>
+        </div>
+
+        <div class="right-inner-addon">
+          <i class="glyphicon glyphicon-calendar"></i>
+          <input name="date"
+                 type="date"
+                 class="form-control" 
+                 placeholder="Delivery Address" />
+        </div>
+
+        <div class="right-inner-addon">
+          <i class="glyphicon glyphicon-time"></i>
+          <input name="time"
+                 type="time"
+                 class="form-control" 
+                 placeholder="Delivery Address" />
+        </div>
+
+        <div class="right-inner-addon">
+          <i class="glyphicon glyphicon-home"></i>
+          <input name="destination"
+                 type="text"
+                 class="form-control" 
+                 placeholder="Delivery Address" />
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input name="destination" type="checkbox" value="<%= current_user.address %>"> Use default address
+          </label>
+        </div>
+
+
+        <div class="right-inner-addon">
+          <i class="glyphicon glyphicon-comment" style="whitespace: nowrap"></i>
+          <textarea class="form-control" rows="5" name="comments" placeholder="Please enter delivery instructions or allergies."></textarea>
+        </div>
+
+        <div class="buttonHolder">
+          <input class="btn btn-info" type="submit" value="Submit">
+        </div>
+
+    </form>
+
+  </div>
+
+</div>

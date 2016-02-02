@@ -1,0 +1,36 @@
+<h2>Order Details</h2>
+  <div class = "container">
+   <div class = "jumbotron1">
+      <div class = "jumbotron" id="card">
+        <img class="food-icon"src="../../img/<%= @order.cuisine %>alter.jpg">
+        <ul class="card-data-left">
+          <li>Name: <%= @user.find(@order.orderer_id).username %></li>
+          <li>Cuisine: <%= @order.cuisine %></li>
+          <li>Price range: <%= @order.price %></li>
+          <li>Address: <%= @order.destination %></li>
+          <li>Delivery date: <%= @order.delivery_time %></li>
+          <% if @order.orderer_id == current_user.id %>
+          <form method="POST" action="<%= @order.id %>/rate">
+          <li>Rating 
+            <div class="br-theme-bootstrap-stars">
+              <select name="rating" id="example">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <button id="rate_button" type="submit" class="btn-success">Submit</button>
+          </li>
+          </form>
+          <% end %>
+        </ul>
+        <div class="card-data-right">
+          <p>
+            Comments: <%= @order.comment %>
+          </p>
+        </div>
+      </div>
+   </div>
+</div>

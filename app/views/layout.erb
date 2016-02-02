@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/stylesheet.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Geo|Monda' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascript/application.js"></script>
+  <script src="/javascript/jquery.barrating.js"></script>
+  <script type="text/javascript">
+     $(function() {
+        $('#example').barrating({
+          theme: 'fontawesome-stars'
+        });
+     });
+  </script>
+  <link rel="shortcut icon" href="/img/100.png">
+  <title>F&uuml;ber: Modern Food Delivery</title>
+</head>
+<body>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+<!--     <div class="container"> -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a href="/" id="navbar-brand" >F&uuml;ber</a>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/orders/menu">Order</a></li>
+          <li><a href="/orders">Deliver</a></li>
+          <% if current_user.nil? %>
+          <li><a href="/session/new">Sign in</a></li>
+          <% end %>
+          <% if current_user %>
+          <li><a href="/user"><%= current_user.username %></a></li>
+          <li><a href="/session/signout">Sign Out</a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="navbar-collapse collapse">
+   <!--  </div> -->
+  </div>
+  <%= yield %>
+  <footer class="footer-distributed">
+
+      <div class="footer-right">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+      <div class="footer-left">
+
+        <p class="footer-links">
+          <a href="/">Home</a>
+          ·
+          <a href="/orders/menu">Order</a>
+          ·
+          <a href="/orders">Deliver</a>
+          ·
+          <a href="/user">My Account</a>
+        </p>
+
+        <p>F&uuml;ber &copy; 2016</p>
+      </div>
+
+    </footer>
+
+  </body>
+
+</html>
+</body>
+</html>

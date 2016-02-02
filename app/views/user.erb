@@ -1,0 +1,105 @@
+<div class="container-fluid">
+
+
+  <div class="row" style="overflow:hidden">
+
+    <div class="col-md-8">
+      
+      <div class="panel panel-default" id="order-left-nav">
+
+        <div class="panel-heading">
+          <h3 class="panel-title">Your History</h3>
+        </div>
+        
+        <div class="panel-body">
+
+          <div class="order_history">
+            <h3>Order History</h3>
+            <ul style="list-style-type:none">
+              <% @order_history.each do |order| %>
+                <a href="/orders/<%= order.id %>" class="card_link"><span>
+                <li>Deliverer: <%= @user.find(order.deliverer_id).username %><small> <%= @user.find(order.deliverer_id).rating %> <span class="glyphicon glyphicon-star" aria-hidden="true"></span></small></li>
+                <li >Cuisine: <%= order.cuisine %> <small>Price: <%= order.price %></small></li>
+                <li>Address: <%= order.destination %></li>
+                </br>
+              <% end %>
+              </span></a>
+            </ul>
+          </div>
+      
+          <div class="delivery_history">
+            <h3>Delivery History</h3> 
+            <ul style="list-style-type:none">
+              <% @deliver_history.each do |delivery| %>
+              <a href="/orders/<%= delivery.id %>" class="card_link"><span>
+                <li>Orderer: <%= @user.find(delivery.orderer_id).username %> <small> Your rating <%= @user.find(delivery.deliverer_id).rating %> <span class="glyphicon glyphicon-star" aria-hidden="true"></span></small></li>
+                <li>Cuisine: <%= delivery.cuisine %> <small>Price: <%= delivery.price %></small></li>
+                <li>Address: <%= delivery.destination %></li>
+                <br>
+              <% end %>
+              </span></a>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="panel panel-default" id="order-right-nav">
+
+        <div class="panel-heading">
+          <h3 class="panel-title">Your Orders</h3>
+        </div>
+
+        <div class="panel-body">
+
+
+          <h3>Pending Orders</h3>
+          <ul style="list-style-type:none">
+            <% @pending_orders.each do |order| %>
+            <a href="/orders/<%= order.id %>" class="card_link"><span>
+              <li>Cuisine: <%= order.cuisine %> <small>Price: <%= order.price %></small></li>
+              <li>Address: <%= order.destination %></li>
+              <li>Status: pending</li>
+              <br>
+            <% end %>
+            </span></a>
+          </ul>
+
+          <h3>Orders In Transit</h3>
+          <ul style="list-style-type:none">
+            <% @being_delivered.each do |order| %>
+            <a href="/orders/<%= order.id %>" class="card_link"><span>
+              <li><%= @user.find(order.deliverer_id).username %> is delivering</li>
+              <li>Cuisine: <%= order.cuisine %> <small>Price: <%= order.price %></small></li>
+              <li>Address: <%= order.destination %></li>
+              <li>Status: on delivery</li>
+              <br>
+            <% end %>
+            </span></a>
+          </ul>
+
+          <h3>Your Deliveries</h3>
+          <ul style="list-style-type:none">
+            <% @pending_deliveries.each do |delivery| %>
+            <a href="/orders/<%= delivery.id %>" class="card_link"><span>
+              <li>Deliver to: <%= @user.find(delivery.orderer_id).username %></small></li>
+              <li>Cuisine: <%= delivery.cuisine %> <small>Price: <%= delivery.price %></small></li>
+              <li>Address: <%= delivery.destination %></li>
+              <li>Status: on delivery</li>
+              <br>
+            <% end %>
+            </span></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

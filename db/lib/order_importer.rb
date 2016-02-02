@@ -1,0 +1,162 @@
+class OrderImporter
+
+  def import
+    puts "adding orders..."
+    Order.transaction do
+      #order that has already been delivered
+      Order.create(cuisine: "Thai", 
+                   destination: "0897 laser street",
+                   delivery_date: "2016-01-01",
+                   delivery_time: "2016-01-01 15:23:00",
+                   price: 20,
+                   comment: "ring for 303",
+                   orderer_id: 1,
+                   deliverer_id: 3,
+                   delivery_status: 3)
+      Order.create(cuisine: "Burger", 
+                   destination: "6578 grater street",
+                   delivery_date: "2016-01-25",
+                   delivery_time: "2016-01-25 10:23:00",
+                   price: 15,
+                   comment: "Don't touch the doorbell",
+                   orderer_id: 1,
+                   deliverer_id: 2,
+                   delivery_status: 3)
+      Order.create(cuisine: "Sushi", 
+                   destination: "3145 baster street",
+                   delivery_date: "2016-01-16",
+                   delivery_time: "2016-01-16 12:23:00",
+                   price: 10,
+                   comment: "I am allergic to deliveries",
+                   orderer_id: 1,
+                   deliverer_id: 3,
+                   delivery_status: 3)
+      Order.create(cuisine: "Seafood", 
+                   destination: "1443 razer street",
+                   delivery_date: "2016-01-21",
+                   delivery_time: "2016-01-21 19:23:00",
+                   price: 10,
+                   comment: "Do a dance before you ring",
+                   orderer_id: 1,
+                   deliverer_id: 2,
+                   delivery_status: 3)
+      Order.create(cuisine: "African", 
+                   destination: "3452 weeper street",
+                   delivery_date: "2016-01-22",
+                   delivery_time: "2016-01-22 19:33:00",
+                   price: 10,
+                   comment: "I want children's tears",
+                   orderer_id: 3,
+                   deliverer_id: 1,
+                   delivery_status: 3)
+      Order.create(cuisine: "Burger", 
+                   destination: "3666 king street",
+                   delivery_date: "2016-01-19",
+                   delivery_time: "2016-01-19 20:01:00",
+                   price: 15,
+                   comment: "Do Jazz hands upon delivery",
+                   orderer_id: 2,
+                   deliverer_id: 1,
+                   delivery_status: 3)
+      Order.create(cuisine: "Greek", 
+                   destination: "7878 tree street",
+                   delivery_date: "2016-01-18",
+                   delivery_time: "2016-01-18 12:23:00",
+                   price: 10,
+                   comment: "TREEEEEEEEEEEE",
+                   orderer_id: 3,
+                   deliverer_id: 1,
+                   delivery_status: 3)
+
+      #order that is pending (no deliverer_id yet)
+      Order.create(cuisine: "Pizza", 
+                   destination: "4578 crazy street",
+                   delivery_date: "2016-02-02",
+                   delivery_time: "2016-02-02 17:23:00",
+                   price: 20,
+                   comment: "butt allergies",
+                   orderer_id: 1,
+                   delivery_status: 1)
+      Order.create(cuisine: "Greek", 
+                   destination: "9966 devil street",
+                   delivery_date: "2016-02-03",
+                   delivery_time: "2016-02-03 18:23:00",
+                   price: 15,
+                   comment: "Avoid the evil monkey",
+                   orderer_id: 1,
+                   delivery_status: 1)
+      Order.create(cuisine: "Pizza", 
+                   destination: "5876 chaser street",
+                   delivery_date: "2016-02-01",
+                   delivery_time: "2016-02-01 16:23:00",
+                   price: 10,
+                   comment: "nut allergies",
+                   orderer_id: 1,
+                   delivery_status: 1)
+      Order.create(cuisine: "Thai", 
+                   destination: "7899 sawadee street",
+                   delivery_date: "2016-02-04",
+                   delivery_time: "2016-02-04 18:23:00",
+                   price: 10,
+                   comment: "allergy allergies",
+                   orderer_id: 2,
+                   delivery_status: 1)
+      Order.create(cuisine: "Mexican", 
+                   destination: "2048 fraser street",
+                   delivery_date: "2016-02-02",
+                   delivery_time: "2016-02-02 18:23:00",
+                   price: 20,
+                   comment: "please come around the back",
+                   orderer_id: 2,
+                   delivery_status: 1)
+
+      #order that is being delivered
+      Order.create(cuisine: "Seafood", 
+                   destination: "6742 laser street",
+                   delivery_date: "2016-01-31",
+                   delivery_time: "2016-01-31 15:23:22",
+                   price: 20,
+                   comment: "I am allergic to people",
+                   orderer_id: 1,
+                   deliverer_id: 2,
+                   delivery_status: 2)
+      Order.create(cuisine: "Mexican", 
+                   destination: "2349 the hood street",
+                   delivery_date: "2016-01-31",
+                   delivery_time: "2016-01-31 18:23:22",
+                   price: 20,
+                   comment: "I love myself",
+                   orderer_id: 1,
+                   deliverer_id: 3,
+                   delivery_status: 2)
+      Order.create(cuisine: "Burger", 
+                   destination: "4576 turkey street",
+                   delivery_date: "2016-02-01",
+                   delivery_time: "2016-02-01 08:23:22",
+                   price: 20,
+                   comment: "I am allergic to food",
+                   orderer_id: 1,
+                   deliverer_id: 3,
+                   delivery_status: 2)
+      Order.create(cuisine: "Mexican", 
+                   destination: "8465 tiny street",
+                   delivery_date: "2016-02-01",
+                   delivery_time: "2016-02-01 15:23:22",
+                   price: 20,
+                   comment: "I am allergic to people",
+                   orderer_id: 2,
+                   deliverer_id: 3,
+                   delivery_status: 2)
+      Order.create(cuisine: "Seafood", 
+                   destination: "6856 SPARTA street",
+                   delivery_date: "2016-02-01",
+                   delivery_time: "2016-02-01 12:23:22",
+                   price: 20,
+                   comment: "I am allergic to you",
+                   orderer_id: 3,
+                   deliverer_id: 1,
+                   delivery_status: 2)
+
+    end
+  end
+end

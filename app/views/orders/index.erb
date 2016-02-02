@@ -1,0 +1,54 @@
+<h2>Pending Orders</h2>
+<% if current_user %>
+      <% @pending_orders.each do |order| %>
+<div class = "container">
+   <div class = "jumbotron1">
+      <h3><a href="/orders/<%= order.id %>"><%= @user.find(order.orderer_id).username %> <small><%= @user.find(order.orderer_id).rating %> <span class="glyphicon glyphicon-star" aria-hidden="true"></span></small></h3></a>
+      <div class = "jumbotron" id="card">
+        <img class="food-icon"src="../../img/<%= order.cuisine %>alter.jpg">
+        <ul class="card-data-left">
+          <li>Cuisine: <%= order.cuisine %></li>
+          <li>Price range: <%= order.price %></li>
+          <li>Address: <%= order.destination %></li>
+          <li>Delivery date: <%= order.delivery_time %></li>
+        </ul>
+        <div class="card-data-right">
+          <p>
+            Additional Comments: <%= order.comment %>
+          </p>
+        </div>
+        <div>
+          <a href="/orders/<%= order.id %>/deliver"><button type="button" class="btn-success">DELIVER</button></a> 
+        </div>
+      </div>
+   </div>
+</div>
+<% end %>
+<% else %>
+<div class = "container">
+   <div class = "jumbotron1">
+      <h2>Pending orders</h2>
+      <div class = "jumbotron" id="card">
+        <img class="food-icon"src="../../img/Africanalter.jpg">
+        <ul class="card-data-left">
+          <li>Name: Notorious Hungar E</li>
+          <li>Cuisine: Baoss Mealz</li>
+          <li>Price range: Mo Money Mo Problems</li>
+          <li>Address: Om Nom Nom Street</li>
+          <li>Delivery date: February 2nd, 2016</li>
+          <li>Time: 2pm</li>
+        </ul>
+        <div class="card-data-right">
+          <p>
+            Additional Comments: THIS COULD BE YOU!
+          </p>
+        </div>
+        <div>
+          <a href=""><button type="button" class="btn btn-success">DELIVER</button></a> 
+        </div>
+      </div>
+   </div>
+</div>
+<% end %>
+
+
