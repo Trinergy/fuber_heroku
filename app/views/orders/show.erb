@@ -2,7 +2,7 @@
   <div class = "container">
    <div class = "jumbotron1">
       <div class = "jumbotron" id="card">
-        <img class="food-icon"src="../../img/<%= @order.cuisine %>alter.jpg">
+        <img class="food-icon"src="../../img/<%= @order.cuisine.downcase %>alter.jpg">
         <ul class="card-data-left">
           <li>Name: <%= @user.find(@order.orderer_id).username %></li>
           <li>Cuisine: <%= @order.cuisine %></li>

@@ -5,7 +5,7 @@
    <div class = "jumbotron1">
       <h3><a href="/orders/<%= order.id %>"><%= @user.find(order.orderer_id).username %> <small><%= @user.find(order.orderer_id).rating %> <span class="glyphicon glyphicon-star" aria-hidden="true"></span></small></h3></a>
       <div class = "jumbotron" id="card">
-        <img class="food-icon"src="../../img/<%= order.cuisine %>alter.jpg">
+        <img class="food-icon"src="../../img/<%= order.cuisine.downcase %>alter.jpg">
         <ul class="card-data-left">
           <li>Cuisine: <%= order.cuisine %></li>
           <li>Price range: <%= order.price %></li>
