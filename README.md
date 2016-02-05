@@ -1,6 +1,7 @@
 Lighthouse Labs Midterm Project
 
 Time: 4 days
+
 A randomly assigned group of three students are given a web application project which must be built from scratch.
 
 We have implemented Behaviour Driven Development theories such as User stories to help plan out the project.
