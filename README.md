@@ -10,7 +10,7 @@ https://dry-sands-71868.herokuapp.com/
 
 Sign-in @
 
-username: Kendawgg
+username: Kendawgg 
 password: 1234
 
 Feel free to contact me if you have any questions.
