@@ -1,6 +1,6 @@
 Lighthouse Labs Midterm Project
 
-A randomly assigned group of three students are assigned a web application project which must be built from scratch.
+A randomly assigned group of three students are given a web application project which must be built from scratch.
 
 We have implemented Behaviour Driven Development theories such as User stories to help plan out the project.
 After making our own wireframe, we broke down the features into simple achievable tasks and delegated them according to each member's strengths.
