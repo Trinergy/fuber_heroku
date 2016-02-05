@@ -6,9 +6,17 @@ We have implemented Behaviour Driven Development theories such as User stories t
 After making our own wireframe, we broke down the features into simple achievable tasks and delegated them according to each member's strengths.
 
 Fuber is a food delivery community catered to lazy people and busy workers.
-https://dry-sands-71868.herokuapp.com/
+https://floating-journey-72963.herokuapp.com/
 
-Sign-in @
+***
+this is cloned for heroku deployment, please see git commit histories @ https://github.com/Trinergy/fuber/tree/master/sinatra-skeleton 
+***
+
+Responsibilities:
+Back-end data management
+Project Management
+
+Sign-in with
 
 username: Kendawgg 
 password: 1234
